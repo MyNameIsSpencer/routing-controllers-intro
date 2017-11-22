@@ -17,4 +17,9 @@ class PagesController < ApplicationController
     @kitten_url = "http://lorempixel.com/#{requested_size}/#{requested_size}/cats"
   end
 
+  def contest
+    flash[:notice] = "Saurry, yow tu lae fer der cowntest"
+    redirect_to "/welcome"
+  end
+
 end
