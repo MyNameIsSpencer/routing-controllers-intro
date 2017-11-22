@@ -22,4 +22,13 @@ class PagesController < ApplicationController
     redirect_to "/welcome"
   end
 
+  def secrets
+    if [:magic_word] != true
+      flash[:alert] = "Sorry, you don't have the authoriton to access my secrets"
+      redirect_to "/"
+    elsif params[:secret_word] == 'yellowfox'
+      redirect_to "/secrets"
+    end
+  end
+
 end
