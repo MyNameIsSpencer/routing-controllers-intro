@@ -23,11 +23,11 @@ class PagesController < ApplicationController
   end
 
   def secrets
-    if [:magic_word] != true
+    if params[:magic_word] != "yellowfox"
       flash[:alert] = "Sorry, you don't have the authoriton to access my secrets"
       redirect_to "/"
-    elsif params[:secret_word] == 'yellowfox'
-      redirect_to "/secrets"
+    else
+      render :secrets
     end
   end
 
