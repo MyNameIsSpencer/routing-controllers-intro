@@ -8,6 +8,7 @@
   </head>
   <body>
     <header>
+
       <% if flash[:alert] %>
        <p class="alert"><%= flash[:alert] %></p>
       <% end %>
@@ -15,7 +16,11 @@
       <% if flash[:notice] %>
         <p class="notice"><%= flash[:notice] %></p>
       <% end %>
-      <h1><%= @header %></h1>
+      <h1>
+        <%= @header = "I don't know what page this is..."%>
+      </h1>
+
+
     </header>
 
     <main>
